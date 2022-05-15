@@ -246,8 +246,8 @@ function sliderChanged(value) {
     render()
     document.querySelector('#sliderContainer p#count').innerHTML = `(${num})`
 
-    let nodes = document.querySelector('div#Input ol').childNodes
-    let oldLen = nodes.length
+    let list = document.querySelector('div#Input ol')
+    let oldLen = list.childNodes.length
 
     if (value > oldLen) {
         for (let i = 0; i < value-oldLen; i++) {
@@ -262,8 +262,8 @@ function sliderChanged(value) {
         }
     } else {
         for (let i = 0; i < oldLen-value; i++) {
-            let node = nodes[i]
-            document.querySelector('div#Input ol').removeChild(node)
+            let node = list.childNodes[list.childNodes.length-1]
+            list.removeChild(node)
         }
     }
 }
