@@ -63,11 +63,13 @@ button {
     color: white;
 }
 
-button:hover {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3) 0 0);
-}
-button:hover:active {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6) 0 0);
+@media (hover: hover) {
+    button:hover {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.3) 0 0);
+    }
+    button:hover:active {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6) 0 0);
+    }
 }
 
 div.row {
@@ -189,14 +191,14 @@ div#sliderContainer input[type=range]::-webkit-slider-thumb {
     width: 2.8vh;
     height: 2.8vh;
     border-radius: 50%;
-    background: yellow;
+    background: #2196F3;
     cursor: pointer;
 }
 div#sliderContainer input[type=range]::-moz-range-thumb {
     width: 2.8vh;
     height: 2.8vh;
     border-radius: 50%;
-    background: yellow;
+    background: #2196F3;
     cursor: pointer;
 }
 div#sliderContainer p {
@@ -261,8 +263,13 @@ div#Input ol li input[type=text] {
     width: 97%;
     height: 100%;
     border: none;
-    background-color: none;
+    background-color: rgb(59 59 59);
+    color: rgb(255 255 255);
     border-radius: 0.5vh;
+}
+
+div#Input ol li input[type=text]::placeholder {
+    color: rgb(144, 144, 144);
 }
 
 div#main {
