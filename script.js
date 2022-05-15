@@ -81,9 +81,9 @@ function stop() {
 render()
 
 function render() {
-    canvas.fillStyle = "rgb(30 36 42)"
-    canvas.ellipse(pos.x,pos.y,radius*13/12,radius*13/12,0,0,2*Math.PI)
-    canvas.fill()
+    // canvas.fillStyle = "rgb(30 36 42)"
+    // canvas.ellipse(pos.x,pos.y,radius*13/12,radius*13/12,0,0,2*Math.PI)
+    // canvas.fill()
 
     canvas.lineWidth = 2/num
 
