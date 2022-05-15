@@ -256,6 +256,9 @@ function sliderChanged(value) {
             inp.type = "text"
             inp.placeholder = "Value"
             inp.oninput = updateNames
+            if (names[oldLen+i]) {
+                inp.value = names[oldLen+i]
+            }
             // <li><input type="text" placeholder="Value"></li>
             li.appendChild(inp);
             document.querySelector('div#Input ol').appendChild(li);
