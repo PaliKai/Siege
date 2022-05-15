@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="main">
+            <!-- <div style="width: 40vh; height: 0; opacity: 0;"></div> -->
+            <div id="Spinner">
+                <canvas id="Canvas"></canvas>
+                <button type="button", id="Spin", onclick="spin()">Spin!</button>
+                <button type="button", id="Stop", onclick="stop()">Stop!</button>
+                <div class="row">
+                    <button type="button", id="Reset", onclick="reset()">Reset!</button>
+                    <label class="checkboxContainer">Borders?
+                        <input type="checkbox" onchange="setBorders(document.querySelector('.checkboxContainer input').checked)">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div id="sliderContainer">
+                    <p style="display: inline;">Sections:</p>
+                    <input type="range" min="2" max="16" value="4" onchange="sliderChanged(document.querySelector('#sliderContainer input').value)">
+                    <p style="display: inline;" id="count">(4)</p>
+                </div>
+            </div>
+            <div id="Input">
+                <form action="/action_page.php">
+                    <ol></ol>
+                    <hr>
+                    <button type="reset" onclick="resetNames()">Reset</button>
+                </form>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
