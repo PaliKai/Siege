@@ -5,7 +5,7 @@ body {
 }
 
 div#Spinner {
-    width:40vmin;
+    width:40vh;
     display: block;
 }
 
@@ -215,6 +215,7 @@ div#Input {
     border-radius: 1.5vh;
 
     margin-top: 3vh;
+    margin-bottom: 3vh;
 }
 
 div#Input ol {
@@ -255,12 +256,10 @@ div#Input ol li input[type=text] {
 }
 
 div#main {
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    flex-direction:column;
-    align-items: center;
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: center;
     flex-wrap: wrap;
-    width: fit-content;
+    width: 100vw;
     height: 100vh;
 }
