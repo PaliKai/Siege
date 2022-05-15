@@ -48,10 +48,11 @@ button {
 #Reset {
     height: auto;
     width: 36%;
-    display: block;
-    
+
     border-radius: 1vh;
     font-size: 4vh;
+    margin: 0;
+    padding: 0;
     background-color: white;
     text-align: center;
     display: inline;
@@ -152,6 +153,7 @@ div#sliderContainer {
 
     display: flex;
     
+    margin: 0;
     margin-top: 2vh;
     left: 0;
     width: 39vh;
@@ -159,6 +161,7 @@ div#sliderContainer {
     padding: 0;
 
     justify-content: space-evenly;
+    
     align-items: center;
 
     border: 0.5vh solid rgba(10, 10, 10);
@@ -172,6 +175,8 @@ div#sliderContainer input[type=range] {
     background: #ffffff;
     outline: none;
     opacity: 0.7;
+    padding: 0;
+    margin: 0;
     -webkit-transition: .2s;
     transition: opacity .2s;
 }
@@ -216,6 +221,8 @@ div#Input {
 
     margin-top: 3vh;
     margin-bottom: 3vh;
+
+    line-height: 0;
 }
 
 div#Input ol {
@@ -232,6 +239,7 @@ div#Input ol {
 hr {
     margin-top: 5%;
     margin-bottom: 5%;
+    border-width: 0.1vh;
 }
 
 div#Input button {
@@ -242,6 +250,8 @@ div#Input button {
     font: 2vh Arial, Helvetica, sans-serif;
     width: 20%;
     height: 4vh;
+
+    margin: 0;
 }
 
 div#Input ol li input[type=text] {

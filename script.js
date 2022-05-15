@@ -1,6 +1,6 @@
 let Canvas = document.getElementById('Canvas');
-Canvas.width = Canvas.offsetWidth
-Canvas.height = Canvas.offsetHeight
+Canvas.width = 1000 //Canvas.offsetWidth
+Canvas.height = 1000 //Canvas.offsetHeight
 let canvas = Canvas.getContext('2d');
 
 canvas.textBaseline = 'middle';
@@ -92,7 +92,7 @@ function render() {
     
         canvas.fillStyle = `hsl(${i*(angle()*180/Math.PI)}, 100%, 50%)`;
         if (borders) {
-            canvas.lineWidth = 8/num
+            canvas.lineWidth = 48/num
             canvas.strokeStyle = "black"
         } else {
             canvas.strokeStyle = `hsl(${i*(angle()*180/Math.PI)}, 100%, 50%)`;
@@ -151,7 +151,7 @@ function render() {
         canvas.setTransform(1, 0, 0, 1, 0, 0);
     }
 
-    canvas.lineWidth = 12/num
+    canvas.lineWidth = 48/num
     canvas.beginPath()
     //canvas.fillStyle = `rgb(0,0,0)`;
     canvas.fillStyle = `rgb(255 255 255)`;
