@@ -1,0 +1,208 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap);
+
+@font-face {
+    font-family:R6S-RegItalic;
+    src:url(https://static-dm.ubisoft.com/siege/prod/7c574ea662392ab39c09ed79280cf5b2.woff2) format("woff2"),
+    url(https://static-dm.ubisoft.com/siege/prod/1a098e45a853edc663c9505d21770af9.woff) format("woff");
+    font-weight:400;
+    font-style:normal
+}
+
+* {
+    font-family: Roboto, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+
+}
+
+body {
+    background-image: url(https://static-dm.ubisoft.com/siege/prod/7907369fa863844fc1ae432a9ca0e610.jpg);
+}
+
+div#TeamSelect {
+    width: 100vw;
+    height: 7vh;
+    
+}
+
+div#Frame {
+    width: 300px;
+    overflow: hidden;
+
+    --Offset: 0px;
+
+    display: grid;
+    
+    grid-auto-flow: column;
+}
+
+div#Operator {
+    --Mod: 0;
+    width: 300px;
+    left: calc(var(--Offset) + 600px * var(--Mod));
+    position: relative;
+}
+
+div#Operator2 {
+    width: 300px;
+    left: var(--Offset);
+    position: relative;
+}
+
+div.Portrait {
+    height: 500px;
+    width: 100%;
+    background-color: hsla(0,0%,100%,.15);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+div.Icon {
+    width: 120px;
+    background-size: cover;
+    aspect-ratio: 1;
+    margin: 10%;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+}
+
+h1.Label {
+    font-family: R6S-RegItalic, sans-serif;
+    color: #24262a;
+    font-size: 3.5em;
+    font-weight: 400;
+    box-sizing: border-box;
+    min-height: 79px;
+    background-color: #c3c3c3;
+    
+    text-align: center;
+    width:100%;
+
+    padding: 2% 0;
+}
+
+#TeamSelect div {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: 7vh;
+
+    path {
+        fill: #000;
+    }
+}
+
+#TeamSelect div svg {
+    height: 7vh;
+    
+    path {
+        fill: #000;
+    }
+}
+
+#TeamSelect div h1 {
+    padding: 0 15px;
+    font-size: 2.5rem;
+}
+
+#Attack {
+    left: 0;
+    h1 {
+        transition: opacity 1s ease-out;
+        opacity: 1;
+    }
+}
+
+#Defense {
+    right: 0;
+    h1 {
+        transition: opacity 1s ease-out;
+        opacity: 0;
+    }
+}
+
+#RedSide {
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    background-color: #ff141e; /* #0076d8 */
+    /* transform: skew(20deg,0deg); */
+    /* transition: width 1s ease-in-out; */
+}
+
+#RedSide:hover {
+    filter: brightness(0.825);
+}
+
+#RedSide:active {
+    filter: brightness(0.75);
+}
+
+#BlueSide {
+    position: absolute;
+    height: 7vh;
+    width: calc(25% + 50px);
+    right: -50px;
+    background-color: #0076d8;
+    transform: skew(20deg,0deg);
+    transition: width 1s ease-in-out;
+}
+
+#BlueSide:hover {
+    filter: brightness(0.825);
+}
+
+#BlueSide:active {
+    filter: brightness(0.75);
+}
+
+#BlueSide.defending {
+    width: calc(75% + 50px);
+}
+
+#BlueSide.defending ~ div#Attack h1 {
+    opacity: 0;
+}
+
+#BlueSide.defending ~ div#Defense h1 {
+    opacity: 1;
+}
+
+button {
+    width: 600px;
+    aspect-ratio: 4;
+    margin-bottom: 4%;
+
+    box-sizing: border-box;
+
+    background-color: yellow;
+
+    font-size: 3em;
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    border-radius: 1vw;
+}
+
+button:hover {
+    filter: brightness(0.825);
+}
+
+button:active {
+    filter: brightness(0.75);
+}
+
+#main {
+
+    display: flex;
+    width: 100vw;
+    height: 100%;
+    justify-content: center;
+}
