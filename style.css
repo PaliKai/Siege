@@ -9,6 +9,14 @@
     font-style:normal
 }
 
+@font-face {
+    font-family:R6S-Bold;
+    src:url(https://static-dm.ubisoft.com/siege/prod/c72c59e83818ebb90c20a5a67a70fb0b.woff2) format("woff2"),
+    url(https://static-dm.ubisoft.com/siege/prod/0a60b8acde11c1cb9b049ca2cd6bda22.woff) format("woff");
+    font-weight:400;
+    font-style:normal
+  }
+
 * {
     font-family: Roboto, sans-serif;
     margin: 0px;
@@ -18,13 +26,18 @@
 }
 
 body {
+    width: 100vw;
+    height: 100vh;
     background-image: url(https://static-dm.ubisoft.com/siege/prod/7907369fa863844fc1ae432a9ca0e610.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
 }
 
 div#TeamSelect {
     width: 100vw;
     height: 7vh;
-    
+    flex-shrink: 0;
 }
 
 div#Frame {
@@ -105,8 +118,9 @@ h1.Label {
 }
 
 #TeamSelect div h1 {
-    padding: 0 15px;
-    font-size: 2.5rem;
+    padding: 0 1vw 0.25vw 1vw;
+    font-size: 6vh;
+    font-family: R6S-RegItalic, sans-serif;
 }
 
 #Attack {
@@ -118,6 +132,7 @@ h1.Label {
 }
 
 #Defense {
+    z-index: 1;
     right: 0;
     h1 {
         transition: opacity 1s ease-out;
@@ -125,13 +140,67 @@ h1.Label {
     }
 }
 
+button {
+    width: 500px;
+    aspect-ratio: 4;
+    /* font-size: 18px; */
+    font-size: 2.5em;
+    display: inline-block;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    will-change: box-shadow,transform;
+    /* background: radial-gradient( 100% 100% at 100% 0%, #89E5FF 0%, #5468FF 100% ); */
+    background-image: url("/BlackIce.png");
+    background-size: cover;
+    background-position-y: center;
+    box-shadow: 0px 0.01em 0.01em rgb(45 35 66 / 40%), 0px 0.3em 0.7em -0.01em rgb(45 35 66 / 30%), inset 0px -0.01em 0px rgb(58 65 111 / 50%);
+    /* padding: 0 2em; */
+    border-radius: 0.3em;
+    color: #fff;
+    /* height: 2.6em; */
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 18%;
+}
+
+button p {
+    width: 50%;
+    font-family: R6S-RegItalic, sans-serif;
+    font-size: 1.3em;
+    color: rgb(214, 214, 214);
+    text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+    text-align: end;
+}
+
+button p.right {
+    text-align: start;
+}
+  
+button:hover {
+    box-shadow: 0px 0.1em 0.2em rgb(45 35 66 / 40%), 0px 0.4em 0.7em -0.1em rgb(45 35 66 / 30%), inset 0px -0.1em 0px #072229;
+    transform: translateY(-0.1em);
+}
+  
+button:active {
+    box-shadow: inset 0px 0.1em 0.6em #0b313c;
+    transform: translateY(0em);
+}
+
 #RedSide {
     position: absolute;
-    width: 100vw;
+    width: calc(75% + 25px);
     height: 100%;
-    background-color: #ff141e; /* #0076d8 */
+    background: linear-gradient(90deg, #ff141e 0%, #FF2530 100%);
     /* transform: skew(20deg,0deg); */
-    /* transition: width 1s ease-in-out; */
+    transition: width 1s ease-in-out;
+}
+
+#BlueSide.defending + #RedSide {
+    width: calc(25% + 50px);
 }
 
 #RedSide:hover {
@@ -147,9 +216,10 @@ h1.Label {
     height: 7vh;
     width: calc(25% + 50px);
     right: -50px;
-    background-color: #0076d8;
-    transform: skew(20deg,0deg);
+    background: linear-gradient(90deg, #2e83cc 0%, #0076d8 100%);
+    transform: skew(-20deg,0deg);
     transition: width 1s ease-in-out;
+    z-index: 1;
 }
 
 #BlueSide:hover {
@@ -173,36 +243,30 @@ h1.Label {
 }
 
 button {
-    width: 600px;
+    /* width: 600px;
     aspect-ratio: 4;
-    margin-bottom: 4%;
-
-    box-sizing: border-box;
 
     background-color: yellow;
 
     font-size: 3em;
 
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, 0);
-
-    border-radius: 1vw;
+    border-radius: 1vw; */
 }
-
+/* 
 button:hover {
     filter: brightness(0.825);
 }
 
 button:active {
     filter: brightness(0.75);
-}
+} */
 
 #main {
-
+    height: auto;
+    flex-grow: 1;
     display: flex;
+    flex-direction: column;
     width: 100vw;
-    height: 100%;
-    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
 }

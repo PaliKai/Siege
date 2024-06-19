@@ -15,6 +15,8 @@ var divider = document.getElementById("BlueSide")
 
 var scroll = 0
 
+var Op1 = "", Op2 = ""
+
 fetch('./ops.json')
     .then((response) => response.json())
     .then(json => loadOps(json));
@@ -69,6 +71,8 @@ function loadOperator1(op) {
     portrait.style.backgroundImage = `url('${op.picture}')`
     icon.style.backgroundImage = `url('${op.icon}')`
 
+    Op1 = op.name;
+
 }
 
 function loadOperator2(op) {
@@ -78,6 +82,7 @@ function loadOperator2(op) {
     portrait2.style.backgroundImage = `url('${op.picture}')`
     icon2.style.backgroundImage = `url('${op.icon}')`
 
+    Op2 = op.name;
 }
 
 function getScroll() {
@@ -92,6 +97,10 @@ var scrollVel = 0
 const scrollDeccel = 2;
 
 function roll() {
+    if (currentAudio != null) {
+        currentAudio.pause()
+        currentAudio = null;
+    }
     if (scrollVel == 0) {
         scrollVel = 300+Math.random()*200
 
@@ -149,10 +158,24 @@ function center() {
     }
 }
 
+var currentAudio = null;
+
 function result() {
-    var audio = new Audio("Sounds/c4.wav");
-    audio.volume = 0.2;
-    audio.play();
+    let opName = Op1
+    if (scroll > -450) {
+        opName = Op2
+    }
+    if (currentlyDefending) {
+        currentAudio = new Audio(`Sounds/Defenders/${opName}.wav`);
+        currentAudio.volume = 0.5;
+        currentAudio.play();
+    } else {
+        console.log(`Sounds/Attackers/${opName}.wav`)
+        currentAudio = new Audio(`Sounds/Attackers/${opName}.wav`);
+        currentAudio.volume = 0.5;
+        currentAudio.play();
+    }
+    
 }
 
 // window.requestAnimationFrame(roll);
